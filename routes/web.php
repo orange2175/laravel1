@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TasksController;           //この行を追加
-
+use Database\Seeders\TaskSeeder;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
