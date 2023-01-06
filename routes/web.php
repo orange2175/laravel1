@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TasksController;           //この行を追加
-use Database\Seeders\TaskSeeder;
+use App\Http\Controllers\TasksController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,12 +14,7 @@ use Database\Seeders\TaskSeeder;
 |
 */
 
+Route::get('/', [TasksController::class, 'index'])->name('tasks.index');
 
-//ここから削除
-Route::get('/', function () {
-     return view('welcome');
-});
-//ここまで削除
-
-
-Route::get('/', [TasksController::class, 'index'])->name('tasks.index');               //この行を追加
+// 詳細ページ
+Route::get('/{id}', [TasksController::class, 'show'])->name('tasks.detail');                //この行を追加

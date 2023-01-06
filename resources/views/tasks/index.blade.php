@@ -7,6 +7,10 @@
         width: 80%;
         margin: 0 auto;
     }
+    .task__add {
+        text-align: right;
+        padding-bottom: 10px;
+    }
     table {
         border-spacing: 0;
         border-collapse: collapse;
@@ -34,13 +38,13 @@
     <table>
         <tr>
             <th>タスク</th>
-            <th>アクショ</th>
-</tr>
-        @foreach ($tasks as $task)
+            <th>アクション</th>
+        </tr>
+        @foreach($tasks as $task)
         <tr>
-            <td>{{ $task->name }}</td>
-             <td>
-               <a href="">詳細</a>
+            <td>{{$task->name}}</td>
+            <td>
+                <a href="{{route('detail.blade',['id' => $task->id])}}">詳細</a>           //この行を修正
                 <a href="">編集</a>
                 <a href="">削除</a>
             </td>
